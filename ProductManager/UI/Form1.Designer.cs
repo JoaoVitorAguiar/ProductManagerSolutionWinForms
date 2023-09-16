@@ -1,6 +1,6 @@
 ﻿namespace ProductManager
 {
-    partial class Form1
+    partial class frmProduct
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,19 +28,101 @@
         /// </summary>
         private void InitializeComponent()
         {
+            groupBox1 = new GroupBox();
+            saveButton = new Button();
+            numericUpDownPrice = new NumericUpDown();
+            label2 = new Label();
+            nameTextBox = new TextBox();
+            label1 = new Label();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownPrice).BeginInit();
             SuspendLayout();
             // 
-            // Form1
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(saveButton);
+            groupBox1.Controls.Add(numericUpDownPrice);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(nameTextBox);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox1.Location = new Point(185, 75);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(464, 273);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Product Information";
+            groupBox1.Enter += groupBox1_Enter;
+            // 
+            // saveButton
+            // 
+            saveButton.Location = new Point(333, 189);
+            saveButton.Name = "saveButton";
+            saveButton.Size = new Size(75, 33);
+            saveButton.TabIndex = 5;
+            saveButton.Text = "Save";
+            saveButton.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDownPrice
+            // 
+            numericUpDownPrice.DecimalPlaces = 2;
+            numericUpDownPrice.Location = new Point(148, 121);
+            numericUpDownPrice.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
+            numericUpDownPrice.Name = "numericUpDownPrice";
+            numericUpDownPrice.Size = new Size(260, 29);
+            numericUpDownPrice.TabIndex = 4;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(61, 121);
+            label2.Name = "label2";
+            label2.Size = new Size(44, 21);
+            label2.TabIndex = 2;
+            label2.Text = "Price";
+            // 
+            // nameTextBox
+            // 
+            nameTextBox.Location = new Point(148, 69);
+            nameTextBox.Name = "nameTextBox";
+            nameTextBox.Size = new Size(260, 29);
+            nameTextBox.TabIndex = 1;
+            nameTextBox.TextChanged += textBox1_TextChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(61, 72);
+            label1.Name = "label1";
+            label1.Size = new Size(52, 21);
+            label1.TabIndex = 0;
+            label1.Text = "Name";
+            label1.Click += label1_Click;
+            // 
+            // frmProduct
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Name = "Form1";
+            Controls.Add(groupBox1);
+            Name = "frmProduct";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "Product Entry";
+            Load += frmProduct_Load;
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownPrice).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
+
+        private GroupBox groupBox1;
+        private TextBox nameTextBox;
+        private Label label1;
+        private TextBox textBox2;
+        private Label label2;
+        private NumericUpDown numericUpDownPrice;
+        private Button saveButton;
     }
 }
