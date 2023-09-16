@@ -13,6 +13,6 @@ public class DataContext : DbContext
     public DbSet<Product> Products { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlite("");
+        optionsBuilder.UseSqlite(@"Data Source=C:\EstudoCSharp\ProductManagerSolutionWinForms\DataBaseSqlite\ProductsDB.db");
     }
 }
