@@ -6,6 +6,7 @@ namespace ProductManager
     public partial class frmProduct : Form
     {
         private DataContext _dataContext = new DataContext();
+       
         public frmProduct()
         {
             InitializeComponent();
@@ -28,17 +29,30 @@ namespace ProductManager
 
         private void frmProduct_Load(object sender, EventArgs e)
         {
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            var products = _dataContext.Products.ToList();
+            productDataGridView.Rows.Clear();
+            foreach (var product in products)
+            {
+                productDataGridView.Rows.Add(
+                    product.Id,
+                    product.Name,
+                    product.Price);
+            }
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
             try
             {
-                if(string.IsNullOrEmpty(nameTextBox.Text))
+                if (string.IsNullOrEmpty(nameTextBox.Text))
                 {
                     MessageBox.Show("Please enter name.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     nameTextBox.Focus();
-                    Reset();
                     return;
                 }
 
@@ -55,12 +69,13 @@ namespace ProductManager
                 if (_dataContext.SaveChanges() > 0)
                 {
                     MessageBox.Show("Product has been saved.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Reset();
                 }
                 else
                 {
                     MessageBox.Show("Product saved failed.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -72,6 +87,7 @@ namespace ProductManager
         {
             nameTextBox.Text = string.Empty;
             numericUpDownPrice.Value = 0;
+            LoadData();
         }
     }
 }

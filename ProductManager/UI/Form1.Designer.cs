@@ -34,21 +34,27 @@
             label2 = new Label();
             nameTextBox = new TextBox();
             label1 = new Label();
+            productDataGridView = new DataGridView();
+            Id = new DataGridViewTextBoxColumn();
+            Name = new DataGridViewTextBoxColumn();
+            Price = new DataGridViewTextBoxColumn();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownPrice).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)productDataGridView).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(productDataGridView);
             groupBox1.Controls.Add(saveButton);
             groupBox1.Controls.Add(numericUpDownPrice);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(nameTextBox);
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox1.Location = new Point(185, 75);
+            groupBox1.Location = new Point(49, 23);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(464, 273);
+            groupBox1.Size = new Size(634, 395);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Product Information";
@@ -56,7 +62,7 @@
             // 
             // saveButton
             // 
-            saveButton.Location = new Point(333, 189);
+            saveButton.Location = new Point(489, 148);
             saveButton.Name = "saveButton";
             saveButton.Size = new Size(75, 33);
             saveButton.TabIndex = 5;
@@ -67,7 +73,7 @@
             // numericUpDownPrice
             // 
             numericUpDownPrice.DecimalPlaces = 2;
-            numericUpDownPrice.Location = new Point(148, 121);
+            numericUpDownPrice.Location = new Point(304, 80);
             numericUpDownPrice.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
             numericUpDownPrice.Name = "numericUpDownPrice";
             numericUpDownPrice.Size = new Size(260, 29);
@@ -76,7 +82,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(61, 121);
+            label2.Location = new Point(217, 80);
             label2.Name = "label2";
             label2.Size = new Size(44, 21);
             label2.TabIndex = 2;
@@ -84,7 +90,7 @@
             // 
             // nameTextBox
             // 
-            nameTextBox.Location = new Point(148, 69);
+            nameTextBox.Location = new Point(304, 28);
             nameTextBox.Name = "nameTextBox";
             nameTextBox.Size = new Size(260, 29);
             nameTextBox.TabIndex = 1;
@@ -93,12 +99,38 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(61, 72);
+            label1.Location = new Point(217, 31);
             label1.Name = "label1";
             label1.Size = new Size(52, 21);
             label1.TabIndex = 0;
             label1.Text = "Name";
             label1.Click += label1_Click;
+            // 
+            // productDataGridView
+            // 
+            productDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            productDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            productDataGridView.Columns.AddRange(new DataGridViewColumn[] { Id, Name, Price });
+            productDataGridView.Location = new Point(56, 208);
+            productDataGridView.Name = "productDataGridView";
+            productDataGridView.RowTemplate.Height = 25;
+            productDataGridView.Size = new Size(534, 150);
+            productDataGridView.TabIndex = 6;
+            // 
+            // Id
+            // 
+            Id.HeaderText = "Id";
+            Id.Name = "Id";
+            // 
+            // Name
+            // 
+            Name.HeaderText = "Name";
+            Name.Name = "Name";
+            // 
+            // Price
+            // 
+            Price.HeaderText = "Price";
+            Price.Name = "Price";
             // 
             // frmProduct
             // 
@@ -106,13 +138,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(groupBox1);
-            Name = "frmProduct";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Product Entry";
             Load += frmProduct_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownPrice).EndInit();
+            ((System.ComponentModel.ISupportInitialize)productDataGridView).EndInit();
             ResumeLayout(false);
         }
 
@@ -125,5 +157,9 @@
         private Label label2;
         private NumericUpDown numericUpDownPrice;
         private Button saveButton;
+        private DataGridView productDataGridView;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn Name;
+        private DataGridViewTextBoxColumn Price;
     }
 }
