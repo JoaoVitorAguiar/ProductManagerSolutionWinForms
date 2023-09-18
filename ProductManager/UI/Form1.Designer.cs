@@ -90,12 +90,13 @@
             // 
             // saveButton
             // 
+            saveButton.BackColor = Color.LightGreen;
             saveButton.Location = new Point(489, 148);
             saveButton.Name = "saveButton";
             saveButton.Size = new Size(75, 33);
             saveButton.TabIndex = 5;
             saveButton.Text = "Save";
-            saveButton.UseVisualStyleBackColor = true;
+            saveButton.UseVisualStyleBackColor = false;
             saveButton.Click += saveButton_Click;
             // 
             // numericUpDownPrice
@@ -106,6 +107,7 @@
             numericUpDownPrice.Name = "numericUpDownPrice";
             numericUpDownPrice.Size = new Size(260, 29);
             numericUpDownPrice.TabIndex = 4;
+            numericUpDownPrice.ValueChanged += numericUpDownPrice_ValueChanged;
             // 
             // label2
             // 
@@ -115,6 +117,7 @@
             label2.Size = new Size(44, 21);
             label2.TabIndex = 2;
             label2.Text = "Price";
+            label2.Click += label2_Click;
             // 
             // nameTextBox
             // 
@@ -140,7 +143,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(groupBox1);
-
+            Name = "frmProduct";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Product Entry";
             Load += frmProduct_Load;

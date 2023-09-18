@@ -98,18 +98,27 @@ namespace ProductManager
             {
                 var dr = productDataGridView.SelectedRows[0];
                 var frmProductDetail = new frmProductDetail(this);
-                frmProductDetail.idLabel.Text = dr.Cells[0].Value.ToString();    
+                frmProductDetail.idLabel.Text = dr.Cells[0].Value.ToString();
                 frmProductDetail.nameTextBox.Text = dr.Cells[1].Value.ToString();
                 frmProductDetail.numericUpDownPrice.Value = decimal.Parse(dr.Cells[2].Value.ToString());
-                
 
 
-                frmProductDetail.ShowDialog(); 
+
+                frmProductDetail.ShowDialog();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void numericUpDownPrice_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
         }
     }
 }
