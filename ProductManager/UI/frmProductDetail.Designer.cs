@@ -35,12 +35,14 @@
             nameTextBox = new TextBox();
             label1 = new Label();
             idLabel = new Label();
+            button1 = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownPrice).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(updateButton);
             groupBox1.Controls.Add(numericUpDownPrice);
             groupBox1.Controls.Add(label2);
@@ -57,12 +59,13 @@
             // 
             // updateButton
             // 
+            updateButton.BackColor = Color.LightGreen;
             updateButton.Location = new Point(283, 165);
             updateButton.Name = "updateButton";
             updateButton.Size = new Size(75, 33);
             updateButton.TabIndex = 10;
             updateButton.Text = "Update";
-            updateButton.UseVisualStyleBackColor = true;
+            updateButton.UseVisualStyleBackColor = false;
             updateButton.Click += updateButton_Click;
             // 
             // numericUpDownPrice
@@ -108,6 +111,16 @@
             idLabel.TabIndex = 1;
             idLabel.Visible = false;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.LightCoral;
+            button1.Location = new Point(202, 165);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 33);
+            button1.TabIndex = 11;
+            button1.Text = "Delete";
+            button1.UseVisualStyleBackColor = false;
+            // 
             // frmProductDetail
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
@@ -139,5 +152,6 @@
         public NumericUpDown numericUpDownPrice;
         public TextBox nameTextBox;
         public Label idLabel;
+        private Button button1;
     }
 }

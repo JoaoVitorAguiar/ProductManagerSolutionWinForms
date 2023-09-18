@@ -15,7 +15,7 @@ namespace ProductManager.UI;
 public partial class frmProductDetail : Form
 {
     private DataContext _dataContext = new DataContext();
-   
+
 
     private frmProduct frmProduct;
     public frmProductDetail(frmProduct frmProduct)
