@@ -120,5 +120,10 @@ namespace ProductManager
         private void label2_Click(object sender, EventArgs e)
         {
         }
+
+        private void productDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

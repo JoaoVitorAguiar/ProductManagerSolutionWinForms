@@ -45,6 +45,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             groupBox1.Controls.Add(productDataGridView);
             groupBox1.Controls.Add(saveButton);
             groupBox1.Controls.Add(numericUpDownPrice);
@@ -62,31 +63,40 @@
             // 
             // productDataGridView
             // 
+            productDataGridView.AllowUserToAddRows = false;
+            productDataGridView.AllowUserToDeleteRows = false;
+            productDataGridView.AllowUserToResizeColumns = false;
+            productDataGridView.AllowUserToResizeRows = false;
             productDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             productDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             productDataGridView.Columns.AddRange(new DataGridViewColumn[] { Id, Name, Price });
             productDataGridView.Location = new Point(160, 217);
             productDataGridView.Name = "productDataGridView";
+            productDataGridView.ReadOnly = true;
             productDataGridView.RowTemplate.Height = 25;
             productDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             productDataGridView.Size = new Size(534, 371);
             productDataGridView.TabIndex = 6;
+            productDataGridView.CellContentClick += productDataGridView_CellContentClick;
             productDataGridView.RowHeaderMouseDoubleClick += productDataGridView_RowHeaderMouseDoubleClick;
             // 
             // Id
             // 
             Id.HeaderText = "Id";
             Id.Name = "Id";
+            Id.ReadOnly = true;
             // 
             // Name
             // 
             Name.HeaderText = "Name";
             Name.Name = "Name";
+            Name.ReadOnly = true;
             // 
             // Price
             // 
             Price.HeaderText = "Price";
             Price.Name = "Price";
+            Price.ReadOnly = true;
             // 
             // saveButton
             // 
@@ -143,6 +153,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(968, 669);
             Controls.Add(groupBox1);
+            //Name = "frmProduct";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Product Entry";
             Load += frmProduct_Load;
