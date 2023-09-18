@@ -14,14 +14,15 @@ namespace ProductManager.UI;
 
 public partial class frmProductDetail : Form
 {
-    private DataContext _dataContext = new DataContext();
+    private DataContext _dataContext;
 
 
     private frmProduct frmProduct;
-    public frmProductDetail(frmProduct frmProduct)
+    public frmProductDetail(frmProduct frmProduct, DataContext context)
     {
-        InitializeComponent();
+        _dataContext = context;
         this.frmProduct = frmProduct;
+        InitializeComponent();
     }
 
     private void frmProductDetail_Load(object sender, EventArgs e)

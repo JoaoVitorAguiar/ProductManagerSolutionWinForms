@@ -6,10 +6,11 @@ namespace ProductManager
 {
     public partial class frmProduct : Form
     {
-        private DataContext _dataContext = new DataContext();
+        private DataContext _dataContext;
 
-        public frmProduct()
+        public frmProduct(DataContext context)
         {
+            _dataContext = context;
             InitializeComponent();
         }
 
@@ -35,7 +36,6 @@ namespace ProductManager
 
         public void LoadData()
         {
-            _dataContext = new DataContext();
             var products = _dataContext.Products.ToList();
             productDataGridView.Rows.Clear();
             foreach (var product in products)
@@ -97,7 +97,7 @@ namespace ProductManager
             try
             {
                 var dr = productDataGridView.SelectedRows[0];
-                var frmProductDetail = new frmProductDetail(this);
+                var frmProductDetail = new frmProductDetail(this, this._dataContext);
                 frmProductDetail.idLabel.Text = dr.Cells[0].Value.ToString();
                 frmProductDetail.nameTextBox.Text = dr.Cells[1].Value.ToString();
                 frmProductDetail.numericUpDownPrice.Value = decimal.Parse(dr.Cells[2].Value.ToString());
