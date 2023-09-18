@@ -1,12 +1,13 @@
 using ProductManager.Data;
 using ProductManager.Models;
+using ProductManager.UI;
 
 namespace ProductManager
 {
     public partial class frmProduct : Form
     {
         private DataContext _dataContext = new DataContext();
-       
+
         public frmProduct()
         {
             InitializeComponent();
@@ -32,8 +33,9 @@ namespace ProductManager
             LoadData();
         }
 
-        private void LoadData()
+        public void LoadData()
         {
+            _dataContext = new DataContext();
             var products = _dataContext.Products.ToList();
             productDataGridView.Rows.Clear();
             foreach (var product in products)
@@ -83,11 +85,31 @@ namespace ProductManager
             }
         }
 
-        private void Reset()
+        public void Reset()
         {
             nameTextBox.Text = string.Empty;
             numericUpDownPrice.Value = 0;
             LoadData();
+        }
+
+        private void productDataGridView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                var dr = productDataGridView.SelectedRows[0];
+                var frmProductDetail = new frmProductDetail(this);
+                frmProductDetail.idLabel.Text = dr.Cells[0].Value.ToString();    
+                frmProductDetail.nameTextBox.Text = dr.Cells[1].Value.ToString();
+                frmProductDetail.numericUpDownPrice.Value = decimal.Parse(dr.Cells[2].Value.ToString());
+                
+
+
+                frmProductDetail.ShowDialog(); 
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

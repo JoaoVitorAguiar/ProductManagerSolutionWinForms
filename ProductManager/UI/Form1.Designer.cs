@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            productDataGridView = new DataGridView();
+            Id = new DataGridViewTextBoxColumn();
+            Name = new DataGridViewTextBoxColumn();
+            Price = new DataGridViewTextBoxColumn();
             saveButton = new Button();
             numericUpDownPrice = new NumericUpDown();
             label2 = new Label();
             nameTextBox = new TextBox();
             label1 = new Label();
-            productDataGridView = new DataGridView();
-            Id = new DataGridViewTextBoxColumn();
-            Name = new DataGridViewTextBoxColumn();
-            Price = new DataGridViewTextBoxColumn();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownPrice).BeginInit();
             ((System.ComponentModel.ISupportInitialize)productDataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownPrice).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -59,6 +59,34 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Product Information";
             groupBox1.Enter += groupBox1_Enter;
+            // 
+            // productDataGridView
+            // 
+            productDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            productDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            productDataGridView.Columns.AddRange(new DataGridViewColumn[] { Id, Name, Price });
+            productDataGridView.Location = new Point(56, 208);
+            productDataGridView.Name = "productDataGridView";
+            productDataGridView.RowTemplate.Height = 25;
+            productDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            productDataGridView.Size = new Size(534, 150);
+            productDataGridView.TabIndex = 6;
+            productDataGridView.RowHeaderMouseDoubleClick += productDataGridView_RowHeaderMouseDoubleClick;
+            // 
+            // Id
+            // 
+            Id.HeaderText = "Id";
+            Id.Name = "Id";
+            // 
+            // Name
+            // 
+            Name.HeaderText = "Name";
+            Name.Name = "Name";
+            // 
+            // Price
+            // 
+            Price.HeaderText = "Price";
+            Price.Name = "Price";
             // 
             // saveButton
             // 
@@ -106,45 +134,20 @@
             label1.Text = "Name";
             label1.Click += label1_Click;
             // 
-            // productDataGridView
-            // 
-            productDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            productDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            productDataGridView.Columns.AddRange(new DataGridViewColumn[] { Id, Name, Price });
-            productDataGridView.Location = new Point(56, 208);
-            productDataGridView.Name = "productDataGridView";
-            productDataGridView.RowTemplate.Height = 25;
-            productDataGridView.Size = new Size(534, 150);
-            productDataGridView.TabIndex = 6;
-            // 
-            // Id
-            // 
-            Id.HeaderText = "Id";
-            Id.Name = "Id";
-            // 
-            // Name
-            // 
-            Name.HeaderText = "Name";
-            Name.Name = "Name";
-            // 
-            // Price
-            // 
-            Price.HeaderText = "Price";
-            Price.Name = "Price";
-            // 
             // frmProduct
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(groupBox1);
+
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Product Entry";
             Load += frmProduct_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownPrice).EndInit();
             ((System.ComponentModel.ISupportInitialize)productDataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownPrice).EndInit();
             ResumeLayout(false);
         }
 
