@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            button1 = new Button();
             updateButton = new Button();
             numericUpDownPrice = new NumericUpDown();
             label2 = new Label();
             nameTextBox = new TextBox();
             label1 = new Label();
             idLabel = new Label();
-            button1 = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownPrice).BeginInit();
             SuspendLayout();
@@ -56,6 +56,17 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Product Information";
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.LightCoral;
+            button1.Location = new Point(202, 165);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 33);
+            button1.TabIndex = 11;
+            button1.Text = "Delete";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // updateButton
             // 
@@ -111,17 +122,6 @@
             idLabel.TabIndex = 1;
             idLabel.Visible = false;
             // 
-            // button1
-            // 
-            button1.BackColor = Color.LightCoral;
-            button1.Location = new Point(202, 165);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 33);
-            button1.TabIndex = 11;
-            button1.Text = "Delete";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
             // frmProductDetail
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
@@ -135,7 +135,7 @@
             MinimizeBox = false;
             Name = "frmProductDetail";
             StartPosition = FormStartPosition.CenterParent;
-            Text = "frmProductDetail";
+            Text = "Product Detail";
             Load += frmProductDetail_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

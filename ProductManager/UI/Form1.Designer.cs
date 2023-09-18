@@ -54,7 +54,7 @@
             groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.Location = new Point(49, 23);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(634, 395);
+            groupBox1.Size = new Size(860, 621);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Product Information";
@@ -65,11 +65,11 @@
             productDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             productDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             productDataGridView.Columns.AddRange(new DataGridViewColumn[] { Id, Name, Price });
-            productDataGridView.Location = new Point(56, 208);
+            productDataGridView.Location = new Point(160, 217);
             productDataGridView.Name = "productDataGridView";
             productDataGridView.RowTemplate.Height = 25;
             productDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            productDataGridView.Size = new Size(534, 150);
+            productDataGridView.Size = new Size(534, 371);
             productDataGridView.TabIndex = 6;
             productDataGridView.RowHeaderMouseDoubleClick += productDataGridView_RowHeaderMouseDoubleClick;
             // 
@@ -91,7 +91,7 @@
             // saveButton
             // 
             saveButton.BackColor = Color.LightGreen;
-            saveButton.Location = new Point(489, 148);
+            saveButton.Location = new Point(593, 157);
             saveButton.Name = "saveButton";
             saveButton.Size = new Size(75, 33);
             saveButton.TabIndex = 5;
@@ -102,7 +102,7 @@
             // numericUpDownPrice
             // 
             numericUpDownPrice.DecimalPlaces = 2;
-            numericUpDownPrice.Location = new Point(304, 80);
+            numericUpDownPrice.Location = new Point(408, 89);
             numericUpDownPrice.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
             numericUpDownPrice.Name = "numericUpDownPrice";
             numericUpDownPrice.Size = new Size(260, 29);
@@ -112,7 +112,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(217, 80);
+            label2.Location = new Point(321, 89);
             label2.Name = "label2";
             label2.Size = new Size(44, 21);
             label2.TabIndex = 2;
@@ -121,7 +121,7 @@
             // 
             // nameTextBox
             // 
-            nameTextBox.Location = new Point(304, 28);
+            nameTextBox.Location = new Point(408, 37);
             nameTextBox.Name = "nameTextBox";
             nameTextBox.Size = new Size(260, 29);
             nameTextBox.TabIndex = 1;
@@ -130,7 +130,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(217, 31);
+            label1.Location = new Point(321, 40);
             label1.Name = "label1";
             label1.Size = new Size(52, 21);
             label1.TabIndex = 0;
@@ -141,7 +141,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(968, 669);
             Controls.Add(groupBox1);
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Product Entry";
