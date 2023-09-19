@@ -14,6 +14,7 @@ Este projeto é um CRUD (Create, Read, Update, Delete) para o cadastro de produt
 ### Boas Práticas e Padrões de Programação
 - O projeto segue boas práticas de programação, incluindo a organização do código, nomenclatura consistente e comentários explicativos.
 - Padrões de projeto são aplicados conforme necessário para garantir uma arquitetura sólida e escalável.
+- Apliquei a abordagem Code First para gerar o banco de dados por meio do modelo, aplicando as migrations pelo Entity Framework Core.
 
 ### Orientação a Objetos
 - A orientação a objetos é fundamental no projeto, com a criação de classes e objetos para representar produtos e gerenciar operações CRUD.
@@ -65,8 +66,10 @@ A seguir, apresentamos as instruções para executar a aplicação:
 
 1. Abra o Visual Studio ou a IDE de sua escolha.
 2. Abra o projeto da aplicação Windows Forms.
-3. Pressione F5 ou inicie a depuração para iniciar a aplicação Windows Forms, pode ser em modo debug ou release.
-4. Use a interface do aplicativo para interagir com o CRUD de produtos.
+3. Aplique as migrations para gerar o banco Sqlite, caso necessário.
+4. Pressione F5 ou inicie a depuração para iniciar a aplicação Windows Forms, pode ser em modo debug ou release.
+5. Use a interface do aplicativo para interagir com o CRUD de produtos.
+
 
 Lembre-se de que a execução da aplicação pode variar dependendo do ambiente de desenvolvimento e das configurações específicas do projeto. Certifique-se de seguir as instruções adequadas ao seu cenário.
 *OBS*: Para editar um produto, e posteriormente poder deletar ou salvar a edição, clique duas vezes no indicador esquerdo do grid do registro desejado;
