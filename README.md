@@ -1,5 +1,10 @@
 # Documentação do Projeto - CRUD de Produtos em C#
 
+##
+<p align="center">
+  <img src="https://github.com/JoaoVitorAguiar/ProductManagerSolutionWinForms/blob/main/scr/img/ProductManagerJoaoVitorAguiarDemonstracao.gif" width="450" />
+</p>
+
 ## Descrição do Projeto
 
 Este projeto é um CRUD (Create, Read, Update, Delete) para o cadastro de produtos, desenvolvido em C#. O objetivo é criar uma aplicação que permita adicionar, remover, editar e visualizar produtos. O projeto foi implementado em Windows Forms.
