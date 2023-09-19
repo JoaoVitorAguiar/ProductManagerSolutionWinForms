@@ -47,8 +47,8 @@ O projeto está organizado da seguinte maneira:
 
 O projeto segue os seguintes padrões de projeto:
 
-- **Padrão Repository**: O `ProdutoRepository` separa a lógica de acesso aos dados do restante da aplicação, promovendo a separação de preocupações.
-- **Padrão Console UI**: Para a versão Console Application, o projeto segue um padrão simples de interface do usuário baseada em console.
+- **Padrão Repository**: O `ProdutoRepository` separa a lógica de acesso aos dados do restante da a  plicação, promovendo a separação de preocupações.
+- **Padrão UI**: Projeto segue um padrão simples de interface do usuário baseada em Windows Forms.
 
 ## Boas Práticas
 
