@@ -74,9 +74,4 @@ A seguir, apresentamos as instruções para executar a aplicação:
 Lembre-se de que a execução da aplicação pode variar dependendo do ambiente de desenvolvimento e das configurações específicas do projeto. Certifique-se de seguir as instruções adequadas ao seu cenário.
 *OBS*: Para editar um produto, e posteriormente poder deletar ou salvar a edição, clique duas vezes no indicador esquerdo do grid do registro desejado;
 
-## Conclusão
-
-Este projeto demonstra a capacidade de desenvolver um CRUD de produtos em C#, seguindo boas práticas, padrões de projeto e orientação a objetos. Ele é uma oportunidade para avaliar as habilidades do desenvolvedor em criar uma aplicação funcional e bem estruturada.
-
-Para qualquer dúvida ou esclarecimento adicional, sinta-se à vontade para entrar em contato. Agradecemos por considerar este projeto e desejamos boa sorte!
 
