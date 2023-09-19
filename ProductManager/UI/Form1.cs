@@ -1,5 +1,6 @@
 using ProductManager.Data;
 using ProductManager.Models;
+using ProductManager.Repositories;
 using ProductManager.UI;
 
 namespace ProductManager
@@ -7,10 +8,12 @@ namespace ProductManager
     public partial class frmProduct : Form
     {
         private DataContext _dataContext;
+        private IProductRepository _products;
 
         public frmProduct(DataContext context)
         {
             _dataContext = context;
+            _products = new ProductRepository(_dataContext);
             InitializeComponent();
         }
 
@@ -36,7 +39,7 @@ namespace ProductManager
 
         public void LoadData()
         {
-            var products = _dataContext.Products.ToList();
+            var products = _products.GetAll();
             productDataGridView.Rows.Clear();
             foreach (var product in products)
             {
@@ -67,8 +70,7 @@ namespace ProductManager
                 var product = new Product();
                 product.Name = nameTextBox.Text;
                 product.Price = numericUpDownPrice.Value;
-                _dataContext.Products.Add(product);
-                if (_dataContext.SaveChanges() > 0)
+                if (_products.Save(product))
                 {
                     MessageBox.Show("Product has been saved.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Reset();

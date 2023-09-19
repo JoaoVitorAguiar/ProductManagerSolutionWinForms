@@ -1,5 +1,6 @@
 ﻿using ProductManager.Data;
 using ProductManager.Models;
+using ProductManager.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,13 +15,13 @@ namespace ProductManager.UI;
 
 public partial class frmProductDetail : Form
 {
-    private DataContext _dataContext;
+    private IProductRepository _products;
 
 
     private frmProduct frmProduct;
     public frmProductDetail(frmProduct frmProduct, DataContext context)
     {
-        _dataContext = context;
+        _products = new ProductRepository(context);
         this.frmProduct = frmProduct;
         InitializeComponent();
     }
@@ -49,7 +50,7 @@ public partial class frmProductDetail : Form
             }
             var id = Convert.ToInt32(idLabel.Text);
 
-            var product = _dataContext.Products.FirstOrDefault(x => x.Id == id);
+            var product = _products.GetById(id);
             if (product == null)
             {
                 MessageBox.Show("Product not found", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -57,8 +58,7 @@ public partial class frmProductDetail : Form
             }
             product.Name = nameTextBox.Text;
             product.Price = numericUpDownPrice.Value;
-            _dataContext.Products.Update(product);
-            if (_dataContext.SaveChanges() > 0)
+            if (_products.Update(product))
             {
                 MessageBox.Show("Product has been saved.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
@@ -83,7 +83,7 @@ public partial class frmProductDetail : Form
         try
         {
             var id = Convert.ToInt32(idLabel.Text);
-            var product = _dataContext.Products.FirstOrDefault(x => x.Id == id);
+            var product = _products.GetById(id);
             if (product == null)
             {
                 MessageBox.Show("Product not found", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -91,9 +91,8 @@ public partial class frmProductDetail : Form
             }
 
             if (MessageBox.Show("Do you want to delete?", "Qeuestion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                _dataContext.Products.Remove(product);
-                if (_dataContext.SaveChanges() > 0)
+            
+                if (_products.Delete(product))
                 {
                     MessageBox.Show("Product has been deleted.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
@@ -104,7 +103,7 @@ public partial class frmProductDetail : Form
                     MessageBox.Show("Product deletion failed.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     this.Close();
                 }
-            }
+            
         }
         catch (Exception ex)
         {
