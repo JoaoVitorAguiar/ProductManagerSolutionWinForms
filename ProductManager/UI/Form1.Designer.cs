@@ -153,6 +153,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(968, 669);
             Controls.Add(groupBox1);
+            MaximizeBox = false;
             //Name = "frmProduct";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Product Entry";
