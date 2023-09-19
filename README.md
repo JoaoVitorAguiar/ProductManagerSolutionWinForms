@@ -57,6 +57,20 @@ O código é escrito seguindo boas práticas, incluindo:
 - Nomes de variáveis e métodos significativos e autoexplicativos.
 - Tratamento de erros adequado com mensagens de erro claras.
 
+## Execução
+
+A seguir, apresentamos as instruções para executar a aplicação:
+
+### Windows Forms
+
+1. Abra o Visual Studio ou a IDE de sua escolha.
+2. Abra o projeto da aplicação Windows Forms.
+3. Pressione F5 ou inicie a depuração para iniciar a aplicação Windows Forms, pode ser em modo debug ou release.
+4. Use a interface do aplicativo para interagir com o CRUD de produtos.
+
+Lembre-se de que a execução da aplicação pode variar dependendo do ambiente de desenvolvimento e das configurações específicas do projeto. Certifique-se de seguir as instruções adequadas ao seu cenário.
+*OBS*: Para editar um produto, e posteriormente poder deletar ou salvar a edição, clique duas vezes no indicador esquerdo do grid do registro desejado;
+
 ## Conclusão
 
 Este projeto demonstra a capacidade de desenvolver um CRUD de produtos em C#, seguindo boas práticas, padrões de projeto e orientação a objetos. Ele é uma oportunidade para avaliar as habilidades do desenvolvedor em criar uma aplicação funcional e bem estruturada.
